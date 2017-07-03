@@ -1,0 +1,10 @@
+
+I found the address of auth, the original return address from the check_password
+function and the start address of libc.
+
+I found the address of the following commands:
+
+mov eax, -1; 
+inc eax; inc eax;  (So, now eax is 1)
+pop edx (I puted the address of auth in the next instruction after this pop, so edx is now this address)
+mov [edx], eax;

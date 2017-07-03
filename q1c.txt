@@ -1,0 +1,1 @@
+Similar to q1b.py, but in the 4 byte of the return address from system, I puted the address of exit function. The parameter of exit is '\x42', it written after the address of "\bin\sh".

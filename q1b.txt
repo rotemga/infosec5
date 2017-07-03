@@ -1,0 +1,4 @@
+I found the offset of the eip by the script Dan showed us in lecture.
+I found the address of system by running gdb ./sudo and writing print system. (It's gave me the address of system in libc).
+I found the address of bin/sh by doing what written in instructions.
+The 4 * 'a' between the system call and it's parameter ("bin/sh") is the 4 bytes of the return address from system.

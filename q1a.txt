@@ -1,0 +1,2 @@
+First, buff has size of 65. The strcat function concatenate two strings without chenk if the size of the result string is suitable to the size of the destination string.
+So, I chose 70 chars has input, so we get segmantaion fault.

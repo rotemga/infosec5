@@ -1,0 +1,14 @@
+Explanation of the loop:
+After the body of the loop is execute, we want to start it again, so I calculated the start of the loop's body (by calculating the address in the stack we call to puts),
+so I did pop esp and after it I puted the address I found, so esp is now the start of the loop again.
+
+The description of the issues in the exercise: 
+
+1. We saved the puts address in ebp because when we call to puts function, in the proluge there is push ebp, and this is override the address of puts function in the stack,
+but we did pop ebp before we entered the function, so inside ebp there is the address of puts and we override puts address with itself. So, the loop is working.
+
+
+2.The 4 bytes after the puts address is the 4 bytes of the return address, skip is the return address of puts, and in skip we skip 4 bytes so we skip the address of the start of the string (the argument for puts), so we can go to the rest of our ROP, to pop esp and to return to the body of the loop again.
+
+3. I included my string in the end of the ROP, because in the end of the string there is zero, and strcat is stop when it's see zero.
+We don't want that strcat will stop our ROP in the start / middle of it.
